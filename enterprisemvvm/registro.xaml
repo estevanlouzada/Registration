@@ -1,0 +1,31 @@
+﻿<Page x:Class="enterprisemvvm.registro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:enterprisemvvm"
+      mc:Ignorable="d" 
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid Background="#FFDADADA">
+        <Border MinWidth="400" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="10" MaxWidth="600">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0">
+                </DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="welcome" FontSize="30" FontWeight="bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Button Content="Registration" HorizontalAlignment="Left"/>
+                    <Button Content="login" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+
+                <TextBox MaterialDesign:HintAssist.Hint="username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <PasswordBox MaterialDesign:HintAssist.Hint="password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 5"/>
+                <PasswordBox MaterialDesign:HintAssist.Hint="confirm password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 5"/>
+                <TextBox MaterialDesign:HintAssist.Hint="email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Button Content="register" Margin="0 20 "/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="enterprisemvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:enterprisemvvm"
+       
+        mc:Ignorable="d"
+         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Register" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="3"  Padding="3" CommandParameter="{Binding}" Command="{Binding Novo}" Content="Novo"/>
+            <Button Margin="3" Padding="3" CommandParameter="{Binding}" Command="{Binding Edit}" Content="Edit"/>
+            <!-- button with comand that binding viewModel function the name of the button is Delete  -->
+            <Button Margin="3" Padding="3" CommandParameter="{Binding}" Command="{Binding Delete}" Content="Delete"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <Grid >
+            <DataGrid ItemsSource="{Binding Registers}"
+          AutoGenerateColumns="False"
+          IsReadOnly="True"
+          SelectedItem="{Binding RegisterSelected}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="Cpf" Binding="{Binding Cpf}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                   
+                </DataGrid.Columns>
+                    
+            </DataGrid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
